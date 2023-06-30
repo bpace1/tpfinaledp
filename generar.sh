@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash
 
 #downloadNames: none -> string
 #descarga la lista de nombres posibles a nuestro directorio actual con el nombre "possibleNames".
@@ -25,7 +25,7 @@ generateImages(){
 		for i in $(seq $CMD)
 	       		do
 				nombre=$(selectName)
-				$(curl -o "dir/$nombre" -L -s  https://source.unsplash.com/random/900%C3%97700/?person)
+				curl -o "dir/$nombre" -L -s  https://source.unsplash.com/random/900%C3%97700/?person
 				echo "Imagen $i) $nombre  descargada."
 			done
 		else echo "No es un número"
