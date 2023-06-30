@@ -32,10 +32,27 @@ generateImages(){
 	fi
 }
 
+#compress: none -> string
+#comprime un archivo.
+compress(){
+	tar -zcf imgCompressed.tar.gz dir/
+	echo "Se comprimió el archivo." 
+}
+
+#validationMark: none -> file
+#genera el archivo con la suma de verificacion del archivo comprimido.
+validationMark(){
+	 md5sum imgCompressed.tar.gz > imgCompressed.tar.gz.sum
+	 echo "se generó un archivo con la suma de validación."
+	
+}
+
 #main: none -> none
 #main llama a las funciones de este script en el orden establecido para cumplir con nuestro fin.
 main (){
 	downloadNames
 	generateImages
+	compress
+	validationMark
 }
 main
