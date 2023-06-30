@@ -11,20 +11,20 @@ menu (){
 	if [[ $CMD  =~ ^[1-4]$ ]] ; then
 		case $CMD in
 			3)
-				echo "Se descargarán las imágenes de la web"
-				#descargar.sh #ver como ejecutar otro archivo .sh dentro de uno.
+				echo "Se comprimirán las imágenes de la web"
+				bash descomprimir.sh
 			;;
 			1)
 				echo "Se están generando las imágenes"
-				#generar.sh
+				bash generar.sh
 			;;
 			2)
 				echo "Se están procesando las imágenes"
-				#procesar.sh
+				bash procesar.sh
 			;;
 			4)
 				echo "Se están comprimiendo los archivos"
-				#comprimir.sh 
+				bash comprimir.sh 
 			;;
 		esac
 	else 
