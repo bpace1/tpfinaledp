@@ -3,26 +3,26 @@
 
 menu (){
 	echo "Ingrese un comando de la siguiente lista:"
-	echo "Descargar"
-	echo "Generar"
-	echo "Procesar"
-	echo "Comprimir"
+	echo "1 para Generar imagenes" 
+	echo "2 para Procesar imagenes"
+	echo "3 para descargar imagenes"
+	echo "4 para Comprimir imagenes"
 	read CMD
-	if [[ $CMD  =~ +[A-Ba-B]$ ]] ; then
+	if [[ $CMD  =~ ^[1-4]$ ]] ; then
 		case $CMD in
-			descargar)
+			3)
 				echo "Se descargarán las imágenes de la web"
 				#descargar.sh #ver como ejecutar otro archivo .sh dentro de uno.
 			;;
-			generar)
+			1)
 				echo "Se están generando las imágenes"
 				#generar.sh
 			;;
-			procesar)
+			2)
 				echo "Se están procesando las imágenes"
 				#procesar.sh
 			;;
-			comprimir)
+			4)
 				echo "Se están comprimiendo los archivos"
 				#comprimir.sh 
 			;;
