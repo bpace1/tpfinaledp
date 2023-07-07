@@ -1,5 +1,5 @@
 #!/bin/bash
-#init: none -> string
+#init: none -> string string
 #marca el inicio de este archivo mediante la repeticion de guiones medios.
 init(){
 	echo -------------------------------------------------------
