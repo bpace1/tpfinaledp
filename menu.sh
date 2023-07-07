@@ -26,7 +26,6 @@ options(){
                                 	bash descomprimir.sh
 	                        ;;
         	                1)
-                	                echo "Se están generando las imágenes"
                         	        bash generar.sh
 	                        ;;
         	                2)
