@@ -17,7 +17,7 @@ init(){
 validarParametros(){
 	if ! [ $# -eq 2 ]
 	then
-        	echo "se necesitan dos argumentos"
+        	echo "ERROR: se necesitan dos argumentos"
         	exit 1
 	fi
 

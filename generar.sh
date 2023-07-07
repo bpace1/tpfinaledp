@@ -31,6 +31,7 @@ generateImages(){
 		for i in $(seq $CMD)
 	       		do
 				nombre=$(selectName)
+				echo "Descargando imagen $i."
 				curl -o "dir/$nombre" -L -s  https://source.unsplash.com/random/900%C3%97700/?person
 				echo "Imagen $i) $nombre  descargada."
 			done
