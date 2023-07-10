@@ -10,7 +10,7 @@ do
 	NOMBRE=${FILE:6}
 
 	#Si pasa el regex de nombre valido se convierte la imagen
-	if [[ $NOMBRE =~ ^[A-Z]{1}[a-z]+(([ ]{1}[][A-Z]{1}[a-z]+)?)$ ]]
+	if [[ $NOMBRE =~ ^[A-Z]{1}[a-z]+(([ ]{1}[A-Z]{1}[a-z]+)?)$ ]]
 		then	
 		convert "$FILE" -resize 512x512! "$FILE"
 	fi
