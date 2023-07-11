@@ -1,6 +1,10 @@
 #!/bin/bash
 #Descompresion
 
+CANTIDAD_ARGUMENTOS=$#
+TAR=$1
+CHECKSUM=$2
+
 #init: none -> string string
 #marca el inicio de este archivo mediante la repeticion de guiones medios.
 init(){
@@ -15,13 +19,13 @@ init(){
 #Se valida que se pasan 2 argumentos
 #Se valida que el primer argumento sea un archivo que existe y sea regular
 validarParametros(){
-	if ! [ $# -eq 2 ]
+	if ! [ $CANTIDAD_ARGUMENTOS -eq 2 ]
 	then
         	echo "ERROR: se necesitan dos argumentos"
         	exit 1
 	fi
-
-	TAR=$1
+	
+	[ "$TAR" == "" ] || [ "$CHECKSUM" == "" ] && echo "No se admiten argumentos vacios!!" && exit 5
 	[ ! -e $TAR ] && echo "Archivo $TAR no existe!!" && exit 2
 	[ ! -f $TAR ] && echo "$TAR no es un archivo regular!!" && exit 3
 
@@ -30,7 +34,6 @@ validarParametros(){
 #validarChecksum: file -> none
 #Se comparan los checksum y se avise de un error en caso de diferir
 validarChecksum(){
-	CHECKSUM=$2
 	CHECKSUM_NUEVO=$(md5sum $TAR)
 	echo "CHECKSUM NUEVO: $CHECKSUM_NUEVO"
 	[[ ! $CHECKSUM_NUEVO == $CHECKSUM ]] && echo "Ocurrio un error en el checksum" && exit 4
