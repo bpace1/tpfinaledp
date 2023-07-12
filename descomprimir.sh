@@ -61,7 +61,6 @@ descomprimirTar(){
 descomprimirTar(){
 	tar xf $TAR
 	echo "El tar $TAR fue descomprimido correctamente"
-	exit 0
 }
 
 #end: none -> string string
@@ -70,6 +69,7 @@ descomprimirTar(){
 end(){
         echo "Fin de descompresión de imágenes."
         echo -------------------------------------------------------
+	exit 0
 }
 
 #main: none -> none

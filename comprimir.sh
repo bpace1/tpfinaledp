@@ -12,15 +12,15 @@ init(){
 #getNames: none -> file string
 #se encarga de hacer la lista de los nombres que toman las imagenes en un archivo listNames
 getNames(){
-#	mkdir -p dir2/
-	ls dir | grep .jpg | cut -d "." -f-1  > dir2/listNames
+	mkdir -p dir2/
+	ls dir > dir2/listNames
 	echo "Archivo de todos los nombres de imágenes generado."
 }
 
 #getValidNames: none -> file string
 #se encargade hacer la lista de los nombres validos que toman las imagenes en un archivo listValidNames
 getValidNames(){
-	ls dir2 | grep .jpg | cut -d "." -f-1  > dir2/listValidNames
+	ls dir2 > dir2/listValidNames
 	echo "Archivo de nombres validos de imágenes generado"
 
 }

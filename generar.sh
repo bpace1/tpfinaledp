@@ -32,7 +32,7 @@ generateImages(){
 	       		do
 				nombre=$(selectName)
 				echo "Descargando imagen $i."
-				curl -o "dir/$nombre.jpg" -L -s  https://source.unsplash.com/random/900%C3%97700/?person
+				curl -o "dir/$nombre" -L -s  https://source.unsplash.com/random/900%C3%97700/?person
 				echo "Imagen $i) $nombre  descargada."
 			done
 		else echo "No es un número"
@@ -60,6 +60,7 @@ validationMark(){
 end(){
 	echo "Fin de Proceso de generación y compresión de imágenes."
 	echo -------------------------------------------------------
+	exit 0
 }
 
 #main: none -> none
