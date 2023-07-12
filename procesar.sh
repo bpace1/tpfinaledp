@@ -5,7 +5,7 @@
 #marca el inicio de este archivo mediante la repeticion de guiones medios y un mensaje.
 init(){
         echo -------------------------------------------------------
-        echo "Se iniciará el proceso del archivo comprimir"
+        echo "Se iniciará el proceso del archivo procesar"
 
 }
 
