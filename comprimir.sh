@@ -55,7 +55,7 @@ endingCharA(){
 #compress: none -> string
 #comprime un archivo.
 compress(){
-        tar -zcf comprimidoFinal.tar.gz  dir/ dir2/
+        tar -zcf salida/final.tar.gz  dir/ dir2/
         echo "Se comprimió el archivo."
 }
 
