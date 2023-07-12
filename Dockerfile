@@ -5,4 +5,9 @@ RUN apt-get install -y curl
 RUN apt-get install -y imagemagick
 RUN apt-get clean
 EXPOSE 80
+RUN mkdir -p tuia/salida
+ADD ["descomprimir.sh","/tuia/"]
+ADD ["generar.sh","/tuia/"]
+ADD ["procesar.sh","/tuia/"]
+ADD ["menu.sh","/tuia/"] 
 ENTRYPOINT ["/bin/bash"]
