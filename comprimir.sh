@@ -27,7 +27,7 @@ getValidNames(){
                 #Si pasa el regex de nombre valido se agrega al archivo
                 if [[ $NOMBRE =~ ^[A-Z]{1}[a-z]+(([ ]{1}[A-Z]{1}[a-z]+)?)$ ]]
                         then
-                        echo $NOMBRE >> dir2/listValidNames
+                        $NOMBRE >> dir2/listValidNames
                 fi
 
         done
