@@ -12,22 +12,22 @@ init(){
 #getNames: none -> file string
 #se encarga de hacer la lista de los nombres que toman las imagenes en un archivo listNames
 getNames(){
-	mkdir -p dir2/
-	ls dir > dir2/listNames
+	mkdir -p tuia/dir2/
+	ls tuia/dir > tuia/dir2/listNames
 	echo "Archivo de todos los nombres de imágenes generado."
 }
 
 #getValidNames: none -> file string
 #se encargade hacer la lista de los nombres validos que toman las imagenes en un archivo listValidNames
 getValidNames(){
-	for FILE in ./dir/*
+	for FILE in tuia/dir/*
         do
-                #Obtenemos el nombre sin la ruta './dir/'
-                NOMBRE=${FILE:6}
+                #Obtenemos el nombre sin la ruta 'tuia/dir/'
+                NOMBRE=${FILE:9}
                 #Si pasa el regex de nombre valido se agrega al archivo
                 if [[ $NOMBRE =~ ^[A-Z]{1}[a-z]+(([ ]{1}[A-Z]{1}[a-z]+)?)$ ]]
                         then
-                        $NOMBRE >> dir2/listValidNames
+			echo $NOMBRE  >> tuia/dir2/listValidNames
                 fi
 
         done
@@ -44,9 +44,9 @@ endingCharA(){
 	  lenName=${#name}
 	  lastChar=${name:lenName-1:1}
 	   if [[  $lastChar == "a" ]] ; then
-		   echo  $name >> dir2/endingWA
+		   echo  $name >> tuia/dir2/endingWA
 	   fi
-	done < dir2/listNames
+	done < tuia/dir2/listNames
 	echo "Chequeo terminado con éxito"
 	echo "En caso de corresponder, el archivo fue creado"
 }
@@ -55,7 +55,7 @@ endingCharA(){
 #compress: none -> string
 #comprime un archivo.
 compress(){
-        tar -zcf salida/final.tar.gz  dir/ dir2/
+        tar -zcf tuia/salida/final.tar.gz  tuia/dir/ tuia/dir2/
         echo "Se comprimió el archivo."
 }
 

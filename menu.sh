@@ -36,16 +36,16 @@ options(){
 		if [[ $CMD  =~ ^[1-4]$ ]] ; then
         	        case $CMD in
                 	        2)
-					sudo bash descomprimir.sh imgCompressed.tar.gz imgCompressed.tar.gz.sum
+					sudo bash tuia/descomprimir.sh tuia/imgCompressed.tar.gz tuia/imgCompressed.tar.gz.sum
 	                        ;;
         	                1)
-                        	        bash generar.sh
+                        	        bash tuia/generar.sh
 	                        ;;
         	                3)
-                        	        bash procesar.sh
+                        	        bash tuia/procesar.sh
 	                        ;;
         	                4)
-                        	        bash comprimir.sh	
+                        	        bash tuia/comprimir.sh	
 				;;
         	        esac
 	        else

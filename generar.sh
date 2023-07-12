@@ -24,7 +24,7 @@ selectName(){
 #generateImages: number -> none
 #genera las imagenes y las guarda con un nombre del archivo de forma aleatoria.
 generateImages(){
-	mkdir -p dir/
+	mkdir -p tuia/dir/
 	echo "Indique la cantidad de imagenes que quiere descargar y presione enter:"
 	read CMD
 	if [[ $CMD =~ ^[0-9]+$ ]]; then
@@ -32,7 +32,7 @@ generateImages(){
 	       		do
 				nombre=$(selectName)
 				echo "Descargando imagen $i."
-				curl -o "dir/$nombre" -L -s  https://source.unsplash.com/random/900%C3%97700/?person
+				curl -o "tuia/dir/$nombre" -L -s  https://source.unsplash.com/random/900%C3%97700/?person
 				echo "Imagen $i) $nombre  descargada."
 			done
 		else echo "No es un número"
@@ -42,14 +42,14 @@ generateImages(){
 #compress: none -> string
 #comprime un archivo.
 compress(){
-	tar -zcf imgCompressed.tar.gz dir/
+	tar -zcf tuia/imgCompressed.tar.gz tuia/dir/
 	echo "Se comprimió el archivo." 
 }
 
 #validationMark: none -> file
 #genera el archivo con la suma de verificacion del archivo comprimido.
 validationMark(){
-	 md5sum imgCompressed.tar.gz > imgCompressed.tar.gz.sum
+	 md5sum tuia/imgCompressed.tar.gz > tuia/imgCompressed.tar.gz.sum
 	 echo "Se generó un archivo con la suma de validación."
 	
 }
