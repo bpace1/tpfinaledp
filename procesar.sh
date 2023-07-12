@@ -30,7 +30,7 @@ process(){
 
 	done
 	echo "Las imagenes Fueron procesadas."
-	#exit 0
+	
 }
 
 #end: none -> string string

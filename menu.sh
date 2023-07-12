@@ -10,8 +10,8 @@ init(){
 titles(){
 	echo "Ingrese un comando de la siguiente lista y luego pulse enter:"
         echo "1 para Generar imágenes." 
-        echo "2 para Procesar imágenes."
-	echo "3 para Descomprimir imágenes."
+	echo "2 para Descomprimir imágenes."
+        echo "3 para Procesar imágenes."
         echo "4 para Comprimir imágenes."
 	echo "Si presiona cualquier otra tecla seguida de un enter, saldrá del programa."
 
@@ -35,13 +35,13 @@ options(){
 		read CMD
 		if [[ $CMD  =~ ^[1-4]$ ]] ; then
         	        case $CMD in
-                	        3)
+                	        2)
 					sudo bash descomprimir.sh imgCompressed.tar.gz imgCompressed.tar.gz.sum
 	                        ;;
         	                1)
                         	        bash generar.sh
 	                        ;;
-        	                2)
+        	                3)
                         	        bash procesar.sh
 	                        ;;
         	                4)

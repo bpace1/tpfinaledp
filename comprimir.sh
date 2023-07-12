@@ -55,6 +55,7 @@ compress(){
 end(){
         echo "Fin de proceso de archivo comprimir"
         echo -------------------------------------------------------
+	exit 0
 }
 
 #main: none -> none
