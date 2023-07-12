@@ -1,8 +1,13 @@
 Trabajo Práctico FINAL Entorno de programación - 2023
+
 Autores: 
+
 	- Cattaneo Matias.
+
 	- Cattaneo Alexis.
+
 	- Pace Bruno.
+
 
 El programa se ocupa de Descargar imágenes de personas,
 de manera tal, que todas las que inician con nombres
