@@ -59,7 +59,7 @@ descomprimirTar(){
 #descomprimirTar: file -> string
 #Se descomprime el archivo TAR
 descomprimirTar(){
-	tar xvf $TAR
+	tar xf $TAR
 	echo "El tar $TAR fue descomprimido correctamente"
 	exit 0
 }

@@ -16,14 +16,17 @@ init(){
 #Se le da la resolución 512x512
 process(){
 	echo "Inicio de filtrado de nombres y redimensión de imagenes."
+	mkdir -p dir2
 	for FILE in ./dir/*
 	do
 		#Obtenemos el nombre sin la ruta './dir/'
 		NOMBRE=${FILE:6}
+		echo $NOMBRE
 		#Si pasa el regex de nombre valido se convierte la imagen
 		if [[ $NOMBRE =~ ^[A-Z]{1}[a-z]+(([ ]{1}[A-Z]{1}[a-z]+)?)$ ]]
 			then	
-			convert "$FILE" -resize 512x512! "$FILE"
+			#convert entrada.jpg -gravity center -resize 512x512+0+0 \-extent 512x512 salida.jpg
+			convert $FILE -gravity center -resize 512x512+0+0 \-exent 512x512  dir2/$FILE
 		fi
 
 	done
