@@ -20,8 +20,18 @@ getNames(){
 #getValidNames: none -> file string
 #se encargade hacer la lista de los nombres validos que toman las imagenes en un archivo listValidNames
 getValidNames(){
-	ls dir2 > dir2/listValidNames
-	echo "Archivo de nombres validos de imágenes generado"
+	for FILE in ./dir/*
+        do
+                #Obtenemos el nombre sin la ruta './dir/'
+                NOMBRE=${FILE:6}
+                #Si pasa el regex de nombre valido se agrega al archivo
+                if [[ $NOMBRE =~ ^[A-Z]{1}[a-z]+(([ ]{1}[A-Z]{1}[a-z]+)?)$ ]]
+                        then
+                        echo $NOMBRE >> dir2/listValidNames
+                fi
+
+        done
+
 
 }
 

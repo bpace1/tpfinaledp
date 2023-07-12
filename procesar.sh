@@ -23,7 +23,7 @@ process(){
 		#Si pasa el regex de nombre valido se convierte la imagen
 		if [[ $NOMBRE =~ ^[A-Z]{1}[a-z]+(([ ]{1}[A-Z]{1}[a-z]+)?)$ ]]
 			then	
-			convert "$FILE" -resize 512x512! "$FILE"
+			convert "$FILE" -gravity center -resize 512x512+0+0 -extent 512x512 "$FILE"
 		fi
 
 	done
@@ -32,9 +32,9 @@ process(){
 }
 
 #end: none -> string string
-#marca el fin del proceso del archivo comprimir.
+#marca el fin del proceso del archivo procesar.
 end(){
-        echo "Fin de proceso de archivo comprimir"
+        echo "Fin de proceso de archivo procesar"
         echo -------------------------------------------------------
 }
 
