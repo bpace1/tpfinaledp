@@ -36,7 +36,7 @@ options(){
 		if [[ $CMD  =~ ^[1-4]$ ]] ; then
         	        case $CMD in
                 	        3)
-                                     	bash descomprimir.sh
+					sudo bash descomprimir.sh imgCompressed.tar.gz imgCompressed.tar.gz.sum
 	                        ;;
         	                1)
                         	        bash generar.sh
