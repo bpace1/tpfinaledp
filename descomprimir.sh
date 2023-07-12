@@ -1,15 +1,12 @@
 #!/bin/bash
 #Descompresion
-<<<<<<< HEAD
 ##Se pasaran dos archivos comprimidos por parametro
 
-=======
 
 CANTIDAD_ARGUMENTOS=$#
 TAR=$1
 CHECKSUM=$2
 
->>>>>>> 3284166fe296011beeca43ea06539df7a563ec45
 #init: none -> string string
 #marca el inicio de este archivo mediante la repeticion de guiones medios.
 init(){
@@ -40,16 +37,12 @@ validarTar(){
 
 }
 
-#validarChecksum: file -> none
-#Se comparan los checksum y se avise de un error en caso de diferir
-}
 
 #validarChecksum: file -> none
 #se valida que el archivo que contiene el checksum exista
 #Se comparan los checksum y se avisa de un error en caso de diferir
 
 validarChecksum(){
-#	[ ! -f $TAR ] && echo "$TAR no es un archivo regular!!" && exit 3
 	[ ! -e $CHECKSUM ] && echo "Archivo $CHECKSUM no existe!!" && exit 6
         [ ! -f $CHECKSUM ] && echo "$CHECKSUM no es un archivo regular!!" && exit 7
 }
