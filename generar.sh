@@ -9,8 +9,8 @@ init(){
 #downloadNames: none -> string
 #descarga la lista de nombres posibles a nuestro directorio actual con el nombre "possibleNames".
 downloadNames() {
-	curl -s -o possibleNames  https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/master/assets/dict.csv
-	echo "Se descargó el archivo de nombres."
+	curl -s -o possibleNames https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv
+	echo "Se descargó el archivo de nombres"
 }
 
 #selectName: none -> string (name)
