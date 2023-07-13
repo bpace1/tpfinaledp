@@ -45,15 +45,14 @@ validarTar(){
 validarChecksum(){
 	[ ! -e $CHECKSUM ] && echo "Archivo $CHECKSUM no existe!!" && exit 6
         [ ! -f $CHECKSUM ] && echo "$CHECKSUM no es un archivo regular!!" && exit 7
+	CHECKSUM_NUEVO=$(md5sum $TAR)
+        [[ ! $CHECKSUM_NUEVO == $(cat $CHECKSUM) ]] && echo "Ocurrio un error en el checksum" && exit 4
 }
 
 #Se descomprime el archivo TAR
 descomprimirTar(){
 	tar xvf $TAR
 	echo "El tar $TAR se descomprio correctamente"
-	exit 0
-	CHECKSUM_NUEVO=$(md5sum $TAR)
-	[[ ! $CHECKSUM_NUEVO == $(cat $CHECKSUM) ]] && echo "Ocurrio un error en el checksum" && exit 4
 }
 
 #descomprimirTar: file -> string
